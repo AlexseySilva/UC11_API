@@ -26,7 +26,7 @@ app.use(erroHandler);
 const startServer = async () => {
   try {
     await mongoose.connect(
-      `mongodb+srv://${dbUser}:${dbPassword}@api.isusp.mongodb.net/?retryWrites=true&w=majority&appName=API`
+      `mongodb+srv://${dbUser}:${dbPassword}@api.zubui.mongodb.net/?retryWrites=true&w=majority&appName=api`
     );
     console.log("Conectou ao banco (MongoDB")
 
