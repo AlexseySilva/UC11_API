@@ -28,7 +28,7 @@ const startServer = async () => {
     await mongoose.connect(
       `mongodb+srv://${dbUser}:${dbPassword}@api.zubui.mongodb.net/?retryWrites=true&w=majority&appName=api`
     );
-    console.log("Conectou ao banco (MongoDB")
+    console.log("Conectou ao banco MongoDB")
 
     app.listen(port, () => {
       console.log(`Servidor rodando na porta ${port}`);
