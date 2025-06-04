@@ -11,7 +11,7 @@
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "Godoy",
+  "author": "Professor-Godoy",
   "license": "ISC",
   "description": "API - Usuario",
   "dependencies": {
