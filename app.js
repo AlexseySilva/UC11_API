@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors")
 const { dbUser, dbPassword, port} = require("./config/env");
 const erroHandler = require("./middlewares/errorMiddleware");
 
@@ -10,11 +11,21 @@ const userRoutes = require("./routes/userRoutes");
 // Cria uma instância do Express
 const app = express();
 
+//|Cors| Configuração
+app.use(cors({
+  origin: true, //Permites toda as oringes
+  credentials: true, // Permiote credenciais
+  methods:['GET','POST','PUT','DELETE'],
+  allowedHeaders:['Content-type', 'Authorization','Accept','Origin','X-Requested-Whit'],//Cabeçalho que pode enviar nas requisições
+  exposedHeaders:['Content-Range','X-Requested-Whith'],
+  maxAge:86400
+}))
+
 // Configura o express para entender req. em Json
 app.use(express.json());
 
 // Rota aberta
-app.get("/", (requisicao, resposta) => {
+app.get("/api", (requisicao, resposta) => {
   resposta.status(200).send({ msg: "Bem vindo a API!" });
 });
 
